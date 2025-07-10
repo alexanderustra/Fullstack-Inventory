@@ -1,0 +1,74 @@
+[
+  {
+    "id": "00001",
+    "name": "Black & Decker Drill",
+    "category": "Tools",
+    "quantity": 10,
+    "cost": 70,
+    "price": 120,
+    "status": "Active"
+  },
+  {
+    "id": "00002",
+    "name": "Screw 6mm x 50 pcs",
+    "category": "Materials",
+    "quantity": 200,
+    "cost": 5,
+    "price": 9,
+    "status": "Active"
+  },
+  {
+    "id": "00003",
+    "name": "Brush Size 3",
+    "category": "Paint",
+    "quantity": 50,
+    "cost": 1,
+    "price": 2,
+    "status": "Active"
+  },
+  {
+    "id": "00004",
+    "name": "Cable 2x1.5 100m",
+    "category": "Electricity",
+    "quantity": 15,
+    "cost": 25,
+    "price": 40,
+    "status": "Active"
+  },
+  {
+    "id": "00005",
+    "name": "Adjustable Wrench",
+    "category": "Tools",
+    "quantity": 8,
+    "cost": 15,
+    "price": 25,
+    "status": "Active"
+  },
+  {
+    "id": "00006",
+    "name": "White Paint 20L",
+    "category": "Paint",
+    "quantity": 5,
+    "cost": 35,
+    "price": 55,
+    "status": "Active"
+  },
+  {
+    "id": "00007",
+    "name": "PVC Siphon",
+    "category": "Plumbing",
+    "quantity": 20,
+    "cost": 3,
+    "price": 6,
+    "status": "Active"
+  },
+  {
+    "id": "00008",
+    "name": "Electrical Tape",
+    "category": "Electricity",
+    "quantity": 100,
+    "cost": 0.5,
+    "price": 1,
+    "status": "Active"
+  }
+]

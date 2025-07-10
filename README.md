@@ -1,0 +1,2 @@
+- al seleccionar un producto se activan los botones "delete selected" y "edit selected"
+- necesito mantener los botones individuales para cada producto
