@@ -6,7 +6,7 @@
     "quantity": 10,
     "cost": 70,
     "price": 120,
-    "status": "Active"
+    "status": true
   },
   {
     "id": "00002",
@@ -15,7 +15,7 @@
     "quantity": 200,
     "cost": 5,
     "price": 9,
-    "status": "Active"
+    "status": true
   },
   {
     "id": "00003",
@@ -24,7 +24,7 @@
     "quantity": 50,
     "cost": 1,
     "price": 2,
-    "status": "Active"
+    "status": true
   },
   {
     "id": "00004",
@@ -33,7 +33,7 @@
     "quantity": 15,
     "cost": 25,
     "price": 40,
-    "status": "Active"
+    "status": true
   },
   {
     "id": "00005",
@@ -42,7 +42,7 @@
     "quantity": 8,
     "cost": 15,
     "price": 25,
-    "status": "Active"
+    "status": true
   },
   {
     "id": "00006",
@@ -51,7 +51,7 @@
     "quantity": 5,
     "cost": 35,
     "price": 55,
-    "status": "Active"
+    "status": true
   },
   {
     "id": "00007",
@@ -60,7 +60,7 @@
     "quantity": 20,
     "cost": 3,
     "price": 6,
-    "status": "Active"
+    "status": true
   },
   {
     "id": "00008",
@@ -69,6 +69,97 @@
     "quantity": 100,
     "cost": 0.5,
     "price": 1,
-    "status": "Active"
-  }
+    "status": true
+  },
+  {
+  "id": "00009",
+  "name": "Hammer 16oz",
+  "category": "Tools",
+  "quantity": 12,
+  "cost": 10,
+  "price": 18,
+  "status": true
+},
+{
+  "id": "00010",
+  "name": "Silicone Sealant White",
+  "category": "Materials",
+  "quantity": 30,
+  "cost": 4,
+  "price": 7,
+  "status": true
+},
+{
+  "id": "00011",
+  "name": "Ladder 4 Steps",
+  "category": "Tools",
+  "quantity": 4,
+  "cost": 45,
+  "price": 75,
+  "status": true
+},
+{
+  "id": "00012",
+  "name": "Sandpaper 120 grit",
+  "category": "Materials",
+  "quantity": 100,
+  "cost": 0.2,
+  "price": 0.5,
+  "status": true
+},
+{
+  "id": "00013",
+  "name": "LED Bulb 9W",
+  "category": "Electricity",
+  "quantity": 80,
+  "cost": 2,
+  "price": 4,
+  "status": true
+},
+{
+  "id": "00014",
+  "name": "Pipe Wrench 12\"",
+  "category": "Plumbing",
+  "quantity": 6,
+  "cost": 18,
+  "price": 30,
+  "status": true
+},
+{
+  "id": "00015",
+  "name": "Masking Tape 2\"",
+  "category": "Paint",
+  "quantity": 40,
+  "cost": 1.5,
+  "price": 3,
+  "status": true
+},
+{
+  "id": "00016",
+  "name": "Extension Cord 5m",
+  "category": "Electricity",
+  "quantity": 10,
+  "cost": 8,
+  "price": 14,
+  "status": true
+},
+{
+  "id": "00017",
+  "name": "Masking Tape 2\"",
+  "category": "Paint",
+  "quantity": 40,
+  "cost": 1.5,
+  "price": 3,
+  "status": true
+},
+{
+  "id": "00018",
+  "name": "Extension Cord 5m",
+  "category": "Electricity",
+  "quantity": 10,
+  "cost": 8,
+  "price": 14,
+  "status": true
+}
+
 ]

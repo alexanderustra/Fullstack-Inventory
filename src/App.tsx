@@ -1,69 +1,86 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import Product from './components/Product/Product'
-import productsData from './data/products.json'
+import { useState } from "react";
+import "./App.css";
+import ProductList from "./components/Product/ProductList";
 
 function App() {
+  const [filterOptions, setFilterOptions] = useState({
+  sortBy: null as null | 'id' | 'cost' | 'price' | 'quantity',
+  sortOrder: 'asc' as 'asc' | 'desc',
+  status: 'all' as 'all' | 'active' | 'inactive',
+  category: 'all',
+});
 
-  const [products, setProducts] = useState(productsData);
-  const [selectedProducts, setSelectedProducts] = useState<string[]>([])
 
-  const manageSelectedProducts = (array:string[],id:string) =>{
-     if (array.includes(id)) {
-    return array.filter(item => item !== id);
-    } else {
-      return [...array, id];
-    }
-  }
+  const [searchedContent, setSearchedContent] = useState("");
 
-  const handleCheckbox = (array:string[],id:string) =>{
-    setSelectedProducts(manageSelectedProducts(array,id))
-  }
+  const toggleSort = (field: "id" | "cost" | "price") => {
+    setFilterOptions((prev) => ({
+      ...prev,
+      sortBy: field,
+      sortOrder:
+        prev.sortBy === field && prev.sortOrder === "asc" ? "desc" : "asc",
+    }));
+  };
 
-  useEffect (()=>{
-    console.log(selectedProducts)
-  },[selectedProducts])
+  const cycleStatus = () => {
+    setFilterOptions((prev) => {
+      const next =
+        prev.status === "all"
+          ? "active"
+          : prev.status === "active"
+          ? "inactive"
+          : "all";
+      return { ...prev, status: next };
+    });
+  };
 
-   const handleDelete = () => {
-    setProducts(prevProducts =>
-      prevProducts.filter(product => !selectedProducts.includes(product.id))
-    );
-    setSelectedProducts([]); 
+  const handleCategorySelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setFilterOptions((prev) => ({
+      ...prev,
+      category: e.target.value,
+    }));
+  };
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchedContent(e.target.value);
   };
 
   return (
     <>
-    <h1>Ironmongery</h1>
-    <nav>
-      <h2>Name</h2>
-      <h2>Category</h2>
-      <h2>ID</h2>
-      <h2>Cuantity</h2>
-      <h2>Cost</h2>
-      <h2>Price</h2>
-      <h2>State</h2>
-    </nav>
-    <ul>
-      <button onClick={handleDelete}>Delete selected</button>
-      <button>edit selected</button>
-      {products.map((product) => (
-        <Product
-          key={product.id}
-          id={product.id}
-          name={product.name}
-          category={product.category}
-          quantity={product.quantity}
-          cost={product.cost}
-          price={product.price}
-          status={product.status}
-          onEdit={() => console.log('Edit', product.id)}
-          onDelete={() => console.log('Delete', product.id)}
-          onCheckbox={() => handleCheckbox(selectedProducts,product.id)}
-        />
-      ))}
-    </ul>
+      <h1>Ironmongery</h1>
+      <input type="text" onChange={handleChange} />
+      <button onClick={handleSearch}>Search</button>
+      <nav>
+        <div>empty</div>
+        <h2 onClick={() => toggleSort("id")}>ID</h2>
+        <h2 onClick={() => toggleSort("name")}>Name</h2>
+        <h2>
+          Category
+          <select
+            onChange={handleCategorySelect}
+            value={filterOptions.category}
+          >
+            <option value="all">All</option>
+            <option value="Tools">Tools</option>
+            <option value="Materials">Materials</option>
+            <option value="Paint">Paint</option>
+            <option value="Electricity">Electricity</option>
+            <option value="Plumbing">Plumbing</option>
+          </select>
+        </h2>
+        <h2 onClick={() => toggleSort('quantity')}>Quantity</h2>
+        <h2 onClick={() => toggleSort("cost")}>Cost</h2>
+        <h2 onClick={() => toggleSort("price")}>Price</h2>
+        <h2 onClick={cycleStatus}>State: {filterOptions.status}</h2>
+      </nav>
+
+      <ProductList search={searchedContent} filterOptions={filterOptions} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -5,7 +5,7 @@ interface ProductProps {
   quantity: number;
   cost: number;
   price: number;
-  status: string;
+  status: boolean;
   // Opcional: handlers
   onEdit: () => void;
   onDelete: () => void;

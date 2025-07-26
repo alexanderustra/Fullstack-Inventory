@@ -1,4 +1,5 @@
 import styles from './product.module.css';
+import ProductRow from './ProductRow';
 
 export default function Product({
   id,
@@ -12,19 +13,26 @@ export default function Product({
   onDelete,
   onCheckbox
 }: ProductProps) {
+  
+   const productData = {
+    id,
+    name,
+    category,
+    quantity,
+    cost,
+    price,
+    status,
+    onCheckbox
+  };
 
   return (
     <li className={styles.productItem}>
-      <input type="checkbox" onChange={onCheckbox} />
-      <p>{name}</p>
-      <p>{category}</p>
-      <p>{id}</p>
-      <p>{quantity}</p>
-      <p>{cost} USD</p>
-      <p>{price} USD</p>
-      <p>{status}</p>
-      <button onClick={onEdit}>Edit</button>
-      <button onClick={onDelete}>Delete</button>
+      <ProductRow
+        onCheckbox = {onCheckbox}
+        product={productData}
+        onSave={onEdit}
+        onDelete={onDelete}
+      />
     </li>
   );
 }

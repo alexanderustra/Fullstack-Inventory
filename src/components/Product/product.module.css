@@ -1,0 +1,11 @@
+.productRow {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); 
+    grid-gap: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.productRow input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+}
